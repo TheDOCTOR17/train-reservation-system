@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+</head>
+<body>
+<h1>Available Trains</h1>
+<ul>
+    <li th:each="train : ${trains}">
+        <span th:text="${train.name}"></span> from <span th:text="${train.source}"></span> to <span th:text="${train.destination}"></span>
+        (<span th:text="${train.availableSeats}"></span> seats available)
+        <a th:href="@{/book(trainId=${train.id})}">Book Now</a>
+    </li>
+</ul>
+</body>
+</html>
