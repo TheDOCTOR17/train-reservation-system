@@ -12,6 +12,10 @@ public class TrainService {
     @Autowired
     private TrainRepository trainRepository;
 
+    public void saveTrain(Train train){
+        trainRepository.save(train);
+    }
+
     public List<Train> searchTrains(String source, String destination) {
         return trainRepository.findBySourceAndDestination(source, destination);
     }
